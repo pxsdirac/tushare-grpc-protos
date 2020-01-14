@@ -13,9 +13,13 @@ service TushareService {
     rpc HistData(HistDataRequest) returns (Dataframe) {}
     rpc TickData(TickDataRequest) returns (Dataframe) {}
     rpc TodayTicks(TodayTicksRequest) returns (Dataframe) {}
+    rpc RealTimeQuote(RealTimeQuoteRequest) returns (Dataframe){}
 
 }
 
+message RealTimeQuoteRequest{
+    string code = 1;
+}
 message TodayTicksRequest{
     string code = 1;
     DataSource data_source = 2;
